@@ -1,0 +1,24 @@
+class MyQueue {
+    Queue<Integer> q;
+    public MyQueue() {
+        q = new LinkedList<>();
+    }
+    
+    public void push(int x) {
+        q.add(x);
+    }
+    
+    public int pop() {
+        int x=q.remove();
+        return x;
+    }
+    
+    public int peek() {
+        return q.peek();
+    }
+    
+    public boolean empty() {
+        return q.isEmpty();
+    }
+}
+
