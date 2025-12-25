@@ -1,0 +1,17 @@
+class ValidPalindrome {
+    public static void main(String[] args) {
+        String s = "A man, a plan, a canal: Panama";
+        s = s.replaceAll("[^a-zA-Z0-9]", "").toLowerCase();
+
+        int l = 0, r = s.length() - 1;
+        boolean pal = true;
+
+        while (l < r) {
+            if (s.charAt(l++) != s.charAt(r--)) {
+                pal = false;
+                break;
+            }
+        }
+        System.out.println(pal);
+    }
+}
