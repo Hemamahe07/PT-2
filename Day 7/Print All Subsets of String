@@ -1,0 +1,14 @@
+class Subsets {
+    static void solve(String s, String curr, int i) {
+        if (i == s.length()) {
+            System.out.println(curr);
+            return;
+        }
+        solve(s, curr + s.charAt(i), i + 1);
+        solve(s, curr, i + 1);
+    }
+
+    public static void main(String[] args) {
+        solve("abc", "", 0);
+    }
+}
