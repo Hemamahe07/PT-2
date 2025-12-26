@@ -1,0 +1,13 @@
+class HouseRobber {
+    public static void main(String[] args) {
+        int[] nums = {2,7,9,3,1};
+        int prev1 = 0, prev2 = 0;
+
+        for (int n : nums) {
+            int temp = Math.max(prev1, prev2 + n);
+            prev2 = prev1;
+            prev1 = temp;
+        }
+        System.out.println(prev1);
+    }
+}
