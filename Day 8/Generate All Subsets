@@ -1,0 +1,14 @@
+class Subsets {
+    static void solve(int[] a, int idx, String res) {
+        if (idx == a.length) {
+            System.out.println(res);
+            return;
+        }
+        solve(a, idx + 1, res);
+        solve(a, idx + 1, res + a[idx]);
+    }
+
+    public static void main(String[] args) {
+        solve(new int[]{1,2,3}, 0, "");
+    }
+}
