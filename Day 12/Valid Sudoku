@@ -1,0 +1,12 @@
+def isValidSudoku(board):
+    seen = set()
+    for i in range(9):
+        for j in range(9):
+            if board[i][j] != '.':
+                v = board[i][j]
+                if (i,v) in seen or (v,j) in seen or (i//3,j//3,v) in seen:
+                    return False
+                seen.add((i,v))
+                seen.add((v,j))
+                seen.add((i//3,j//3,v))
+    return True
