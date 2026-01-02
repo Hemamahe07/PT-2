@@ -1,0 +1,9 @@
+def evalRPN(tokens):
+    st=[]
+    for t in tokens:
+        if t in "+-*/":
+            b,a=st.pop(),st.pop()
+            st.append(int(eval(f"{a}{t}{b}")))
+        else:
+            st.append(int(t))
+    return st[-1]
